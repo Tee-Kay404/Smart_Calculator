@@ -216,47 +216,42 @@ Widget buildLastRowButton(BuildContext context, List<String> text) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children:
-        text
-            .map(
-              (text) => GestureDetector(
-                onTap:
-                    () =>
-                        context.read<CalculatorProvider>().buttonPressed(text),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: text == '=' ? 60 : 70,
-                  width: text == '=' ? 155 : 75,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withAlpha(90),
-                        spreadRadius: 2,
-                        blurRadius: 10,
-                        offset: Offset(0, 4),
-                      ),
-                    ],
-                    color:
-                        text == '='
-                            ? Theme.of(context).colorScheme.secondary
-                            : Theme.of(context).colorScheme.inversePrimary,
-                    shape: text == '=' ? BoxShape.rectangle : BoxShape.circle,
-                    borderRadius:
-                        text == '=' ? BorderRadius.circular(35) : null,
-                  ),
-                  child: Text(
-                    text.toString(),
-                    style: TextStyle(
-                      fontSize: 24,
-                      color:
-                          text == '='
-                              ? Theme.of(context).colorScheme.surface
-                              : Theme.of(context).colorScheme.inverseSurface,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
+        text.map((label) {
+          final isEquals = label == '=';
+
+          return ElevatedButton(
+            onPressed: () {
+              context.read<CalculatorProvider>().buttonPressed(label);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  isEquals
+                      ? Theme.of(context).colorScheme.secondary
+                      : Theme.of(context).colorScheme.inversePrimary,
+              foregroundColor: Theme.of(context).colorScheme.surface,
+              shape:
+                  isEquals
+                      ? RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(35),
+                      )
+                      : const CircleBorder(),
+              minimumSize: isEquals ? const Size(155, 60) : const Size(70, 70),
+              splashFactory: NoSplash.splashFactory,
+              elevation: 4,
+              shadowColor: Theme.of(context).shadowColor,
+            ),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color:
+                    isEquals
+                        ? Theme.of(context).colorScheme.surface
+                        : Theme.of(context).colorScheme.inverseSurface,
               ),
-            )
-            .toList(),
+            ),
+          );
+        }).toList(),
   );
 }

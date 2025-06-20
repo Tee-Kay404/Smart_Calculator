@@ -2,6 +2,27 @@
 
 Smart_Cal is a modern calculator app built with Flutter, combining sleek UI with efficient calculation logic. Designed for clarity and ease of use, it supports basic arithmetic operations with responsive feedback and clean design patterns. Whether you're calculating on the go or just appreciating a polished UI, SmartCalc delivers both style and substance.
 
+## 📸 App Screenshots
+
+## Home Screen
+![Calculator Screen](assets/app_images/calc 1.png)
+
+## Drawer Screen
+![Drawer Screen](assets/app_images/calc 2.png)
+
+## Theme Settings
+![Theme Page](assets/app_images/calc 3.png)
+
+## DarkMode
+![DarkMode](assets/app_images/calc 4.png)
+
+## Operation in DarkMode
+![DarkMode](assets/app_images/calc 5.png)
+
+## Operation in lightMode
+![LightMode](assets/app_images/calc 6.png)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
