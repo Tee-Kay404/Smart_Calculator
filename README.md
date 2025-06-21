@@ -4,10 +4,6 @@ Smart_Cal is a modern calculator app built with Flutter, combining sleek UI with
 
 ## 📸 App Screenshots
 
-
-## Operation in DarkMode
-![App](https://github.com/Tee-Kay404/Smart_Calculator/blob/52e41c33e6e23adac048ac3acd59f69c14a571ee/calc.png)
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
